@@ -3,8 +3,10 @@ import 'package:intl/intl.dart';
 
 class UserData extends StatelessWidget {
   final Map<String, dynamic> profileData;
+  final void Function() onLogout;
 
-  const UserData(this.profileData, {Key? key}) : super(key: key);
+  const UserData({Key? key, required this.profileData, required this.onLogout})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,14 @@ class UserData extends StatelessWidget {
         const SizedBox(height: 28.0),
         Center(child: Text('Wow, $age years old liao!')),
         Center(child: Text('Only $daysToBirthday days to next milestone!')),
+        const SizedBox(height: 28.0),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: ElevatedButton(
+            child: Text('Logout'),
+            onPressed: onLogout,
+          ),
+        )
       ],
     );
   }

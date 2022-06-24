@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'FacebookAgeCountdown/index.dart';
+import 'package:test_flutter/CameraTest/index.dart';
+import 'package:test_flutter/FacebookAgeCountdown/index.dart';
+import 'common/routes.dart';
 
 void main() async {
   runApp(const Nav2App());
@@ -11,7 +13,10 @@ class Nav2App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {'/': (context) => const FacebookAgeCountdown()},
+      routes: {
+        Routes.facebookAgeCountdown: (context) => const FacebookAgeCountdown(),
+        Routes.cameraTest: (context) => const CameraTest()
+      },
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:test_flutter/Sidebar/index.dart';
 
 import 'classes/FacebookInfo.dart';
 import 'widgets/UserData.dart';
@@ -40,7 +41,7 @@ class _FacebookAgeCountdownInnerState extends State<FacebookAgeCountdownInner> {
       appBar: AppBar(
         title: const Text("Old Age Countdown"),
       ),
-      drawer: Drawer(child: ListView()),
+      drawer: const Sidebar(),
       body: Center(
           child: !facebookInfo.isInitialized
               ? const Text('Loading')
